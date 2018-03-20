@@ -9,13 +9,15 @@ class WakamonoController extends Controller
 {
 		public function index()
 		{
-			return view('wakamono');
+			$wakamonoList = Wakamono::all();
+			// dd($wakamonoList);
+			return view('wakamono')->with('wakamonoList',$wakamonoList);
 		}
 		public function store(Request $request)
 		{
 			$wakamono = new Wakamono;
 
-			$wakamono->userid = Auth::user()->name;
+			$wakamono->username = Auth::user()->name;
 			$wakamono->old = $request->old;
 			$wakamono->wantold = $request->wantold;
 			$wakamono->area = $request->area;
