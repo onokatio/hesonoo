@@ -17,6 +17,8 @@ class CreateWakamonosTable extends Migration
             $table->increments('id');
 						$table->integer('userid');
 						$table->integer('old');
+						$table->string('wantold');
+						$table->string('area');
 						$table->string('description');
             $table->timestamps();
         });
