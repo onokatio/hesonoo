@@ -12,11 +12,12 @@ class WakamonoSeeder extends Seeder
     public function run()
     {
 			DB::table('wakamonos')->insert([
-				'username' => 'firsttest',
+				'username' => 'おのかちお',
+				'userid' => 1,
 				'old' => '17',
 				'wantold' => '26',
-				'area' => '東京',
-				'description' => 'てすと',
+				'area' => '東京都',
+				'description' => 'OLのお姉さんに養われたいです！！！！！！ twitter: @onokatio_',
 			]);
 
     }
