@@ -14,7 +14,10 @@
 							<li class="list-group-item">ユーザー名: {{ Auth::user()->name }}</li>
 							<li class="list-group-item">メールアドレス: {{ Auth::user()->email }}</li>
 						</ul>
-						<a href="{{ __('Logout') }}" class="btn btn-success">ログアウト</a>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST">
+							{{ csrf_field() }}
+							<button type="submit" class="btn btn-success">ログアウト</a>
+						</form>
         </div>
     </div>
 </div>

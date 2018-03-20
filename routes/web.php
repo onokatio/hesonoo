@@ -18,5 +18,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/young', 'WakamonoController@index')->name('young');
-Route::post('/young', 'WakamonoController@store')->middleware('auth');
 Route::get('/young/add', 'WakamonoController@add')->name('young-add');
+
+Route::post('/young', 'WakamonoController@store')->middleware('auth');

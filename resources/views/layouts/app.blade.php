@@ -34,58 +34,65 @@
 								background-color: rgba(33,33,33,0.4); 
 								height: 100vh;
 						}
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+            .top-left {
+                position: absolute;
+                left: 10px;
+                top: 18px;
+            }
+            .links > a {
+                color: #ffffff;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+								border-bottom: solid 1px #fff;
+								padding-top: 10px;
+								padding-bottom: 10px;
+								margin-left: 10px;
+								margin-right: 10px;
+            }
+						.lonks > a:hover {
+								background-color: rgba(0,0,0,0.3);
+						}
+						.top > a {
+                color: #ffffff;
+								font-size: 18px;
+                padding: 0 25px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+								padding-top: 10px;
+								padding-bottom: 10px;
+								margin-left: 10px;
+								margin-right: 10px;
+						}
 		</style>
 
 </head>
 <body>
 	<div id="cover">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'error') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                <div class="top-left top">
+                        <a href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
                 </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
+                    @else
+                        <a href="{{ route('login') }}">ログイン</a>
+                        <a href="{{ route('register') }}">登録</a>
+                    @endauth
+                </div>
+        <div class="py-5"></div>
+        <main class="py-5">
             @yield('content')
         </main>
     </div>
