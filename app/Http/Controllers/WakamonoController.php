@@ -15,19 +15,25 @@ class WakamonoController extends Controller
 		}
 		public function add()
 		{
-			return view('wakamonoadd');
+			$wakamono = Wakamono::where('userid',Auth::user()->id)->first();
+			//dd($wakamono);
+			return view('wakamonoadd')->with('wakamono',$wakamono);
 		}
 		public function store(Request $request)
 		{
-			$wakamono = new Wakamono;
+			$wakamonoCheck = Wakamono::where('userid',Auth::user()->id)->first();
+			if($wakamonoCheck == null){
+				$wakamono = new Wakamono;
+			}else{
+				$wakamono = Wakamono::find($wakamonoCheck->id);
+			}
+				$wakamono->username = Auth::user()->name;
+				$wakamono->old = $request->input('old');
+				$wakamono->wantold = $request->wantold;
+				$wakamono->area = $request->area;
+				$wakamono->description = $request->description;
 
-			$wakamono->username = Auth::user()->name;
-			$wakamono->old = $request->input('old');
-			$wakamono->wantold = $request->wantold;
-			$wakamono->area = $request->area;
-			$wakamono->description = $request->description;
-
-			$wakamono->save();
+				$wakamono->save();
 
 			return redirect('young');
 		}
