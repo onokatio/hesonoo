@@ -21,16 +21,16 @@
 											{{ csrf_field() }}
 											<div class="form-group">
 												<label>自分の年齢</label>
-												<input type="text" class="form-control" name="old" value="{{ isset($wakamono) && $wakamono->old }}"></input>
+												<input type="text" class="form-control" name="old" value="{{ isset($wakamono) ? $wakamono->old : ''}}"></input>
 											</div>
 											<div class="form-group">
 												<label>お姉さんの年齢</label>
-												<input type="text" class="form-control" name="wantold" value="{{ isset($wakamono) && $wakamono->wantold }}"></input>
+												<input type="text" class="form-control" name="wantold" value="{{ isset($wakamono) ? $wakamono->wantold : '' }}"></input>
 											</div>
 											<div class="form-group">
 												<label>地域</label>
-<select class="form-control" name="area" value="{{ isset($wakamono) && $wakamono->area }}">
-<option value="{{ isset($wakamono) && $wakamono->area }}" selected>{{ isset($wakamono) ? $wakamono->area : '都道府県'}}</option>
+<select class="form-control" name="area" value="{{ isset($wakamono) ? $wakamono->area : ''}}">
+<option value="{{ isset($wakamono) ? $wakamono->area : ''}}" selected>{{ isset($wakamono) ? $wakamono->area : '都道府県'}}</option>
 <option value="北海道">北海道</option>
 <option value="青森県">青森県</option>
 <option value="岩手県">岩手県</option>
@@ -82,7 +82,7 @@
 											</div>
 											<div class="form-group">
 												<label>自己紹介・簡単な説明など</label>
-												<textarea class="form-control" name="description">{{ isset($wakamono) && $wakamono->description }}</textarea>
+												<textarea class="form-control" name="description">{{ isset($wakamono) ? $wakamono->description : ''}}</textarea>
 											</div>
 											<button type="submit" class="btn btn-primary">{{ $wakamono ? '更新' : '投稿' }}</button>
 										</form>
