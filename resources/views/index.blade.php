@@ -64,7 +64,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background-image: url('/image/background.jpg')">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -79,15 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    へそのお
                 </div>
+								<div class="m-b-md">
+									へそのおは、お姉さんに養われたい若者と、若者を養いたいお姉さんのマッチングサービスです。（※ジョークサイトです）
+								</div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/">若者を探す</a>
+                    <a href="/">お姉さんを探す</a>
                 </div>
             </div>
         </div>
