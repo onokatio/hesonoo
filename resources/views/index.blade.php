@@ -94,8 +94,8 @@
 								</div>
 
                 <div class="links">
-                    <a href="{{ route('young') }}">若者を探す</a>
-                    <a href="/">お姉さんを探す</a>
+                    <a href="{{ route('young') }}">若者を探す（お姉さん向け）</a>
+                    <a href="{{ route('young-add') }}">若者として投稿する（若者向け）</a>
                 </div>
             </div>
         </div>
