@@ -16,6 +16,7 @@ class CreateOneesansTable extends Migration
         Schema::create('oneesans', function (Blueprint $table) {
             $table->increments('id');
 						$table->integer('userid');
+						$table->integer('old');
 						$table->string('description');
             $table->timestamps();
         });

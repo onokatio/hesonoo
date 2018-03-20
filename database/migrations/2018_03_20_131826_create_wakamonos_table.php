@@ -16,6 +16,7 @@ class CreateWakamonosTable extends Migration
         Schema::create('wakamonos', function (Blueprint $table) {
             $table->increments('id');
 						$table->integer('userid');
+						$table->integer('old');
 						$table->string('description');
             $table->timestamps();
         });
