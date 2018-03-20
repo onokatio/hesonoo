@@ -14,9 +14,12 @@
                         </div>
                     @endif
 
-                    You are logged in!
                 </div>
             </div>
+						<ul class="list-group my-4">
+							<li class="list-group-item">ユーザー名: {{ Auth::user()->name }}</li>
+							<li class="list-group-item">ユーザーID: {{ Auth::user()->id }}</li>
+						</ul>
         </div>
     </div>
 </div>
