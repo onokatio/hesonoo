@@ -10,5 +10,7 @@ $ composer install
 $ touch database/database.sqlite
 $ php artisan migrate
 $ php artisan db:seed
+$ mv .env.example .env
+$ php artisan key:generate
 $ php artisan serve
 ```
